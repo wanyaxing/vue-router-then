@@ -1,0 +1,24 @@
+{
+  "name": "vue-router-then",
+  "version": "1.0.1201",
+  "description": "Promise the router request, then do anything you want.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wanyaxing/vue-router-then.git"
+  },
+  "keywords": [
+    "promise",
+    "vue",
+    "router"
+  ],
+  "author": "wyx@wanyaxing.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wanyaxing/vue-router-then/issues"
+  },
+  "homepage": "https://github.com/wanyaxing/vue-router-then#readme"
+}
