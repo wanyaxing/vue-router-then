@@ -74,6 +74,7 @@ Vue.use(routerThen)
 
 * Code on src/index.js
 * Gulp it
+* pull it to me on github.
 ```
     npm install
     gulp
@@ -81,6 +82,12 @@ Vue.use(routerThen)
 * You need install gulp in your computer if you hasnot have it.
 ```
     sudo npm install -g gulp
+```
+* publish the code to npm if you want to do it.
+```
+    npm config set registry=http://registry.npmjs.org
+
+    npm publish
 ```
 ## License
 

@@ -81,6 +81,12 @@ Vue.use(routerThen)
 ```
     sudo npm install -g gulp
 ```
+* 你也可以将代码发布到npm，如果你有权限的话。（或者你可以仿照此例，开发其他npm项目）
+```
+    npm config set registry=http://registry.npmjs.org
+
+    npm publish
+```
 ## License
 
 MIT
