@@ -1,50 +1,8 @@
 /*
-vue-router-then，顾名思义，就是给router的方法(push,replace,go)返回一个promise对象，并支持新页面的vm作为参数，进行then方法处理。
-
-注册指令：
-import Vue from 'vue'
-import router from './router'
-import routerThen from './lib/vue-router-then'
-routerThen.initRouter(router)
-Vue.use(routerThen)
-
-
-
-使用方法1：
-
-this.$routerThen.go(-1).then(vm=>{
-    console.log(vm);
-});
-
-
-v-model-link，用于在新路由页获取数据后，返回上一个路由页并更新数据，效果参考v-model。
-注1：该指令仅适用于开启keep-alive的路由。
-注2：v-model-link的值指向下一个路由页面。
-注3：新页面中，在数据确定之后，需要手动提交this.$emit('input',value)事件。（原理同v-model)
-注4：建议v-model-link和v-model一起使用，
-注5：也可以使用@input来捕捉更新事件。
-
-注册指令：
-import Vue from 'vue'
-import router from './router'
-import routerThen from './lib/routerThen'
-routerThen.initRouter(router)
-Vue.use(routerThen)
-
-import modelLink from './lib/modelLink'
-Vue.use(modelLink)
-
-
-使用方法1：
-<inputCustomer v-model="item.customerUUID" v-model-link="'/customer/select_customer'" />
-
-使用方法2：
-<textarea v-model="customerUUID2" v-model-link="'/customer/select_customer'" ></textarea>
-
-使用方法3（不建议）：
-<input v-model-link="'/customer/select_customer'" @input="inputOfModelLink"/>
-
- */
+    vue-router-then
+    Promise the router request, then do anything you want .
+    https://github.com/wanyaxing/vue-router-then
+*/
 
 const routerThen = {
     '$router':null,

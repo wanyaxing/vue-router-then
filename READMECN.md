@@ -1,8 +1,8 @@
 # vue-router-then
- [中文](https://github.com/wanyaxing/vue-router-then/blob/master/READMECN.md)
 
-## this.$routerThen.push().then()
-> Promise the router request,  then do anything you want .
+## 使用方法1
+
+> 顾名思义，就是给router的方法(push,replace,go)返回一个promise对象，并支持新页面的vm作为参数，进行then方法处理。
 
 ```javascript
 example.vue
@@ -16,9 +16,9 @@ methods:{
 }
 ```
 
-## v-model-link
+## 使用方法2
 
-> v-model-link: add a eventListener of the element or component, to catch the input event in next router page.
+> 支持自定义指令v-model-link，捕捉新页面的input事件与当前元素互动，与同一元素上的v-model互动效果会更好。（此功能需要在keep-alive下的roter-view中使用，因为需要页面缓存支持。）
 
 
 ```html
@@ -52,7 +52,7 @@ methods:{
 
 ```
 
-## INSTALL
+## 安装到VUE项目中：
 
 ``` bash
 
@@ -70,15 +70,14 @@ Vue.use(routerThen)
 
 ```
 
-## DEVELOP
+## 继续开发和调试
 
-* Code on src/index.js
-* Gulp it
+* 将本项目下载到本地，在src/index.js基础上进行修改后，可以使用gulp进行代码压缩和转化。
 ```
     npm install
     gulp
 ```
-* You need install gulp in your computer if you hasnot have it.
+* 如果本地没有安装gulp，需要先安装gulp
 ```
     sudo npm install -g gulp
 ```
