@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>vue-router-then</title>
+<body>
+<div id="app">
+    <keep-alive>
+    <router-view></router-view>
+    </keep-alive>
+</div>
+
+<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+<script src="https://npmcdn.com/vue-router/dist/vue-router.js"></script>
+<script src="./dist/index.min.js"></script>
+
+<script>
+const home = {
+    template: '<div>\
+                    <div>[HOME]</div>\
+                    <h2>ex.1 useage of v-model-link</h2>\
+                    <div>chose: <input v-model="choseValue" v-model-link="\'/chose\'" @input="modelLinkCallback" /></div>\
+                    <h2>ex.2 useage of $routerThen</h2>\
+                    <div><input type="text" v-model="message"/><button @click="routerThenClick">GO</button></div>\
+             </div>\
+                ',
+    data() {
+        return {
+            message: 'hello, world.',
+            choseValue: '?',
+        }
+    },
+    methods: {
+        routerThenClick: function() {
+            this.$routerThen.push('/chose').then(vm => {
+                vm.msg = this.message;
+                vm.$once('input', value => {
+                    this.choseValue = value;
+                });
+            });
+        },
+        modelLinkCallback: function(value) {
+            console.log(value);
+        },
+    }
+}
+
+const chose = {
+    template: '<div>\
+                    <div @click="goBack">&lt; back</div>\
+                    <button @click="chose(\'A\')">A</button>\
+                    <button @click="chose(\'B\')">B</button>\
+                    <button @click="chose(\'C\')">C</button>\
+                    <button @click="chose(\'D\')">D</button>\
+                    <div> {{msg}} </div>\
+             </div>',
+    data() {
+        return {
+            msg: '????, ?????.',
+        }
+    },
+    mounted: function() {
+        this.time = new Date().getTime()
+    },
+    methods: {
+        goBack: function() {
+            this.$router.go(-1);
+        },
+        chose: function(r) {
+            this.$emit('input', r);
+            this.$router.go(-1);
+        },
+    }
+}
+
+const router = new VueRouter({
+    routes: [
+        {path: '/',component: home},
+        {path: '/chose',component: chose},
+        {path: '*',component: home}, ]
+})
+
+new Vue({
+    router,
+    el: '#app',
+})
+
+$routerThen.initRouter(router);
+
+</script>
+</body>
+</html>

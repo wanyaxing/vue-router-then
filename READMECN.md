@@ -1,5 +1,7 @@
 # vue-router-then
 
+[demo](http://jsfiddle.net/wanyaxing/2c7f2wef/embedded/)
+
 ## 使用方法1
 
 > 顾名思义，就是给router的方法(push,replace,go)返回一个promise对象，并支持新页面的vm作为参数，进行then方法处理。

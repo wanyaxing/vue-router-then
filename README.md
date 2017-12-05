@@ -1,5 +1,6 @@
 # vue-router-then
- [中文](https://github.com/wanyaxing/vue-router-then/blob/master/READMECN.md)
+
+[demo](http://jsfiddle.net/wanyaxing/2c7f2wef/embedded/)  |  [中文](https://github.com/wanyaxing/vue-router-then/blob/master/READMECN.md)
 
 ## this.$routerThen.push().then()
 > Promise the router request,  then do anything you want .
@@ -51,6 +52,7 @@ methods:{
 </script>
 
 ```
+
 
 ## INSTALL
 
