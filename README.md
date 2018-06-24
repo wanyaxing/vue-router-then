@@ -40,6 +40,16 @@ example.vue
         <textarea v-model="price" v-model-link="'/select_price'" ></textarea>
     </div>
 </template>
+<script>
+methods:{
+    jumpToNextPage:function(value){
+        this.$routerThen.modelLink('/select_price',value=>{
+            this.inputOfModelLink(value);
+        });
+    },
+}
+</script>
+
 
 select_someone.vue
 <script>
