@@ -80,7 +80,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
             return this.push(link).then(function (vm) {
                 console.log('then', vm);
-                vm.$once('input', function (value) {
+                vm.$on('input', function (value) {
                     console.log('modellink.input', el, value);
                     if (typeof el == 'function') {
                         el(value);

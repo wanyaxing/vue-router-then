@@ -64,7 +64,7 @@
         modelLink:function(link, el=null){
             return this.push(link).then(vm=>{
                 console.log('then',vm);
-                vm.$once('input',value=>{
+                vm.$on('input',value=>{
                     console.log('modellink.input',el,value);
                     if (typeof el == 'function')
                     {
